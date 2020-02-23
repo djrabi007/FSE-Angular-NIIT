@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-12">
+            <mat-card>
+                <div class="col-12 text-danger">
+                    <span class="text-danger">{{ errMessage }}</span>
+                </div>
+                <mat-card-header>
+                    <mat-card-title>
+                        <h3>Note App</h3>
+                    </mat-card-title>
+
+                </mat-card-header>
+
+                <mat-card-content>
+                    <form novalidate [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+                        <mat-form-field class="full-width-input">
+                            <input id="userId" matInput formControlName="userId" placeholder="User Id" value="jd@stackroute.in" required>
+                            <mat-error *ngIf="signInForm.get('userId').hasError('required')">
+                                User Id is requried
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="full-width-input">
+                            <input id="userPassword" type="password" matInput placeholder="Password" formControlName="userPassword" value="jdssecret@1234"
+                                [type]="hide ? 'password' : 'text' " required>
+                            <mat-icon matSuffix (click)="hide = !hide">
+                                {{ hide ? 'visibility_off' :'visibility' }}
+                            </mat-icon>
+                            <mat-error *ngIf="signInForm.get('userPassword').hasError('required')">
+                                Password is requried
+                            </mat-error>
+                        </mat-form-field>
+                        <div class="button-panel">
+                            <button type='submit' mat-raised-button color="primary" [disabled]="!signInForm.valid">Sign In</button>
+                        </div>
+
+                    </form>
+                </mat-card-content>
+                <mat-card-actions>
+                    <div align="center">
+                        <a id="new-user-signup" mat-button color="primary" [routerLink]="['/registration']">New User Sign Up</a>
+                    </div>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

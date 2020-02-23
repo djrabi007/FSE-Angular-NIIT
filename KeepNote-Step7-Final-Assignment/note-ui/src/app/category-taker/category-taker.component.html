@@ -1,0 +1,42 @@
+<div class="container">
+	<div class="row">
+
+		<div class="col-12">
+			<!-- Label to display any error messages -->
+			<label class="error-message">{{ errMessage }}</label>
+
+			<!-- Expansion panel to add new notes -->
+
+			<!-- To add notes -->
+
+			<h3>Category Details </h3>
+
+			<mat-expansion-panel>
+
+				<mat-expansion-panel-header>
+
+					<mat-panel-title>Take a category</mat-panel-title>
+				</mat-expansion-panel-header>
+
+				<div class="category-form">
+
+					<mat-form-field>
+						<input matInput class="category-full-width form-control" name="name" placeholder="name" [(ngModel)]="categoryName" #nameModel="ngModel"
+						 required>
+
+					</mat-form-field>
+
+					<mat-form-field>
+						<textarea matInput class="category-full-width form-control" name="description" placeholder="description" [(ngModel)]="categoryDescription"></textarea>
+
+					</mat-form-field>
+
+					<button type="submit" mat-button (click)="addCategories()">Done</button>
+
+				</div>
+
+
+			</mat-expansion-panel>
+		</div>
+	</div>
+</div>

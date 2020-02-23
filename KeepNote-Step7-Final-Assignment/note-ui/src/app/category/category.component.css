@@ -1,0 +1,9 @@
+button-row button,
+button-row a{
+	margin-right: 8px;
+}
+mat-card{
+    min-width: 282px;
+	background-color: rgb(162, 236, 236);
+	margin: 0px 5px 5px 0px;
+}

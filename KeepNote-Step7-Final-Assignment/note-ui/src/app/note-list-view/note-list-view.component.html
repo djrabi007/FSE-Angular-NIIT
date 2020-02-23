@@ -1,0 +1,46 @@
+<div class="container">
+	<div class="row">
+
+		<div class="col-12">
+			<app-note-taker></app-note-taker>
+
+			<div class="keep-ns-list-container">
+				<div style="text-align: center !important;">
+					<label>Not-Started</label>
+				</div>
+
+				<div fxLayout="row wrap" fxLayoutAlign="stretch">
+					<!-- <mat-list> -->
+					<app-note *ngFor="let note of notStartedNotes" [note]="note">
+					</app-note>
+					<!-- </mat-list> -->
+				</div>
+				<!-- Populate notStartedNotes -->
+			</div>
+			<div class="keep-s-list-container">
+				<div style="text-align: center !important;">
+					<label>Started</label>
+				</div>
+				<div fxLayout="row wrap" fxLayoutAlign="stretch">
+					<!-- <mat-list> -->
+					<app-note *ngFor="let note of startedNotes" [note]="note">
+					</app-note>
+					<!-- </mat-list> -->
+				</div>
+				<!-- Populate startedNotes -->
+			</div>
+			<div class="keep-c-list-container">
+				<div style="text-align: center !important;">
+					<label>Completed</label>
+				</div>
+				<div fxLayout="row wrap" fxLayoutAlign="stretch">
+					<!-- <mat-list> -->
+					<app-note *ngFor="let note of completedNotes" [note]="note">
+					</app-note>
+					<!-- </mat-list> -->
+				</div>
+			</div>
+			<!-- Populate completedNotes -->
+		</div>
+	</div>
+</div>

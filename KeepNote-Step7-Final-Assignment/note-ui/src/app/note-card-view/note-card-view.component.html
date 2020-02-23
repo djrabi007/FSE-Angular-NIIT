@@ -1,0 +1,16 @@
+<div class="container ">
+  <div class="row">
+
+    <div class="col-12">
+      <app-note-taker></app-note-taker>
+      <div class="keep-c-note-container">
+        <div fxLayout="row wrap" fxLayoutAlign="stretch">
+          <!-- Include the notes collection with each note rendered as a separate NoteComponent -->
+          <!-- Load and display the collection of notes from server as Material Cards with card title set to note title and card content set to note text  -->
+          <app-note *ngFor="let note of notes" [note]="note">
+          </app-note>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="keep-c-reminder-edit-container">
+  <label class="error-message">{{ errMessage }}</label>
+  <div mat-dialog-title >{{reminder.reminderName}}</div>
+ <div mat-dialog-content>
+  <mat-form-field>
+    <input mat-card-title
+      [(ngModel)]="reminder.reminderName"
+      name="reminderName"
+      matInput
+      placeholder="ReminderName"
+      type="text" required
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <textarea
+      [(ngModel)]="reminder.reminderDescription"
+      name="reminderDescription"
+      matInput
+      placeholder="ReminderDescription"
+    ></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <input mat-card-title
+      [(ngModel)]="reminder.reminderType"
+      name="reminderType"
+      matInput
+      placeholder="ReminderType"
+      type="text" required
+    />
+  </mat-form-field>
+  </div>
+
+  <div  mat-dialog-actions class="keep-c-done-wrapper">
+    <button  (click)="onSave()">Save</button>
+  </div>
+
+</div>

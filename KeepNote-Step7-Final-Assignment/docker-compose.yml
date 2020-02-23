@@ -1,0 +1,76 @@
+version: '3.3'
+services:
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    container_name: mysql-docker
+    network_mode: host
+    environment:
+      MYSQL_HOST: localhost
+      MYSQL_DATABASE: assignment
+      MYSQL_USER: note_user
+      MYSQL_PASSWORD: user@1234
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - /opt/notedb/mysqldb:/var/lib/mysql
+  
+  mongo:
+   image: mongo
+   ports:
+      - "27017:27017"
+   network_mode: host
+
+  ReminderService:
+    image: reminderservice-app
+    build: ReminderService/
+    ports:
+      - "9500:9500"
+    container_name: ReminderService-docker
+    restart: "always"
+    network_mode: host
+    depends_on:
+      - mongo
+      
+  CategoryService:
+    image: categoryservice-app
+    build: CategoryService/
+    ports:
+      - "9400:9400"
+    container_name: CategoryService-docker
+    restart: "always"
+    network_mode: host
+    depends_on:
+      - mongo
+
+  NoteService:
+    image: noteservice-app
+    build: NoteService/
+    ports:
+      - "9300:9300"
+    container_name: NoteService-docker
+    restart: "always"
+    network_mode: host
+    depends_on:
+      - mongo
+  
+  UserAuthentication-Service:
+    image: userauthentication-service-app
+    build: UserAuthentication-Service/
+    ports:
+      - 9100:9100
+    expose:
+      - 9100
+    container_name: UserAuthenticationService-docker
+    restart: "always"
+    network_mode: host
+    depends_on:
+      - mysql
+
+  
+ 
+
+
+       
+
+

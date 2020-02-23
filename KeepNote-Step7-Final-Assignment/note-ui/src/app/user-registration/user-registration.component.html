@@ -1,0 +1,53 @@
+<div class="frm-container">
+	<label class="error-message">{{ errMessage }}</label>
+	<mat-card>
+		<mat-card-header>
+			<mat-card-title>
+				<h3>Note App</h3>
+			</mat-card-title>
+			<mat-card-subtitle>New user registration</mat-card-subtitle>
+		</mat-card-header>
+		<mat-card-content>
+			<form id="registration-form" novalidate #f="ngForm" (ngSubmit)="onSubmit()">
+				<mat-form-field class="full-width-input">
+					<input matInput name="firstName" placeholder="First Name" [(ngModel)]="user.firstName" #f_name="ngModel" required>
+					<mat-error *ngIf="f_name.errors?.required">
+						First name is requried
+					</mat-error>
+				</mat-form-field>
+				<mat-form-field class="full-width-input">
+					<input matInput name="lastName" placeholder="Last Name" [(ngModel)]="user.lastName" #l_name="ngModel" required>
+					<mat-error *ngIf="l_name.errors?.required">
+						Last name is requried
+					</mat-error>
+				</mat-form-field>
+				<mat-form-field class="full-width-input">
+					<input matInput name="userId" placeholder="Email" [(ngModel)]="user.userId" #userId="ngModel" required>
+					<mat-error *ngIf="userId.errors?.required">
+						Email is requried
+					</mat-error>
+				</mat-form-field>
+				<mat-form-field class="full-width-input">
+					<input type="userPassword" matInput placeholder="Password" name="userPassword" [(ngModel)]="user.userPassword" #pwd="ngModel"
+					 [type]="hide ? 'password' : 'text'" required>
+					<mat-icon matSuffix (click)="hide = !hide">
+						{{ hide ? 'visibility_off' :'visibility' }}
+					</mat-icon>
+					<mat-error *ngIf="pwd.errors?.required">
+						Password is requried
+					</mat-error>
+				</mat-form-field>
+
+				<div class="button-panel">
+					<button type='button' mat-raised-button color="primary" (click)="f.reset()">RESET</button>
+					<button type='submit' mat-raised-button color="primary" [disabled]="!f.form.valid">SIGNUP</button>
+				</div>
+			</form>
+		</mat-card-content>
+		<mat-card-actions>
+			<div align="center">
+				<a id="login" mat-button color="primary" [routerLink]="['/login']">Sign In</a>
+			</div>
+		</mat-card-actions>
+	</mat-card>
+</div>

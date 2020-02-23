@@ -1,0 +1,29 @@
+<div class="keep-c-category-edit-container">
+  <label class="error-message">{{ errMessage }}</label>
+  <div mat-dialog-title >{{category.categoryName}}</div>
+ <div mat-dialog-content>
+  <mat-form-field>
+    <input mat-card-title
+      [(ngModel)]="category.categoryName"
+      name="categoryName"
+      matInput
+      placeholder="CategoryName"
+      type="text" required
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <textarea
+      [(ngModel)]="category.categoryDescription"
+      name="categoryDescription"
+      matInput
+      placeholder="CategoryDescription"
+    ></textarea>
+  </mat-form-field>
+ 
+  </div>
+
+  <div  mat-dialog-actions class="keep-c-done-wrapper">
+    <button (click)="onSave()">Save</button>
+  </div>
+
+</div>

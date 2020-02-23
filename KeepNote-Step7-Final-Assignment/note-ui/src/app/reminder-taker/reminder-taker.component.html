@@ -1,0 +1,50 @@
+<div class="container">
+	<div class="row">
+
+		<div class="col-12">
+			<!-- Label to display any error messages -->
+			<label class="error-message">{{ errMessage }}</label>
+
+			<!-- Expansion panel to add new notes -->
+
+			<!-- To add notes -->
+
+
+
+			<h3>Reminder Details </h3>
+
+			<mat-expansion-panel>
+
+				<mat-expansion-panel-header>
+
+					<mat-panel-title>Take a Reminder</mat-panel-title>
+				</mat-expansion-panel-header>
+
+				<div class="reminder-form">
+
+					<mat-form-field>
+						<input matInput name="name" placeholder="name" [(ngModel)]="reminderName" #nameModel="ngModel"
+						 required>
+
+					</mat-form-field>
+
+					<mat-form-field>
+						<textarea matInput  name="description" placeholder="description" [(ngModel)]="reminderDescription"></textarea>
+
+					</mat-form-field>
+
+					<mat-form-field>
+						<textarea matInput  name="type" placeholder="type" [(ngModel)]="reminderType" #typeModel="ngModel"
+						 required></textarea>
+
+					</mat-form-field>
+
+					<button type="submit" mat-raised-button color="primary" (click)="addReminders()">Done</button>
+
+				</div>
+
+
+			</mat-expansion-panel>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,11 @@
+{
+	"name": "container-package",
+	"description": "This is express js, which comes along with http server requires to containerize angular app",
+	"version": "1.0.0",
+	"private": true,
+	"dependencies": {
+		"express": "^4.16.3",
+		"http-proxy":"^1.17.0"
+		},
+	"license": "ISC"
+}

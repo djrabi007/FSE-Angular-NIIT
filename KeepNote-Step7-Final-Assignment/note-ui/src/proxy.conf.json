@@ -1,0 +1,41 @@
+{
+   "/noteservice":{
+      
+        "target" : "http://localhost:9300",
+         "secure" : false,
+         "logLevel" : "debug",
+         "pathRewrite" : {
+             "^/noteservice" : ""
+         }
+    },
+   "/authenticationservice":{
+      
+        "target" : "http://localhost:9100",
+         "secure" : false,
+         "logLevel" : "debug",
+         "pathRewrite" : {
+             "^/authenticationservice" : ""
+         }
+         
+    },
+    "/categoryservice":{
+      
+        "target" : "http://localhost:9400",
+         "secure" : false,
+         "logLevel" : "debug",
+         "pathRewrite" : {
+             "^/categoryservice" : ""
+         }
+         
+    },
+    "/reminderservice":{
+      
+        "target" : "http://localhost:9500",
+         "secure" : false,
+         "logLevel" : "debug",
+         "pathRewrite" : {
+             "^/reminderservice" : ""
+         }
+         
+    }
+}

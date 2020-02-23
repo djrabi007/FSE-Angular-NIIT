@@ -1,0 +1,16 @@
+
+mat-list {
+  padding-bottom: 1em;
+  margin: 0em 1em 2em 1em;
+} 
+.keep-ns-list-container{
+  
+  background-color: rgb(241, 237, 232);
+}
+.keep-s-list-container{
+  background-color: rgb(241, 196, 141);
+}
+.keep-c-list-container{
+  background-color: rgb(185, 236, 136);
+}
+  

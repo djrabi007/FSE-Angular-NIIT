@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">Keep
+	
+	<div [style.visibility]="isHidden? 'visible' : 'hidden'" class="keep-c-toggle-view">
+		<i *ngIf="isNoteView" (click)="switchView()" class="material-icons switchToListView">view_list</i>
+		<i *ngIf="!isNoteView" (click)="switchView()" class="material-icons switchToNoteView">view_quilt</i>
+	</div>
+	<span class="span-throughout-row"></span>
+	<a id="home" mat-button [routerLink]="['/componentview']" >Home</a>
+	<a mat-button [routerLink]="['/logout']">Logout</a>
+
+
+
+</mat-toolbar>

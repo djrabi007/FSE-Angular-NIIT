@@ -1,0 +1,16 @@
+<div class="container ">
+  <div class="row">
+
+    <div class="col-12">
+      <app-reminder-taker></app-reminder-taker>
+
+      <div fxLayout="row wrap" fxLayoutAlign="stretch">
+        <!-- Include the notes collection with each note rendered as a separate NoteComponent -->
+        <!-- Load and display the collection of notes from server as Material Cards with card title set to note title and card content set to note text  -->
+        <app-reminder *ngFor="let reminder of reminders" [reminder]="reminder">
+        </app-reminder>
+      </div>
+
+    </div>
+  </div>
+</div>

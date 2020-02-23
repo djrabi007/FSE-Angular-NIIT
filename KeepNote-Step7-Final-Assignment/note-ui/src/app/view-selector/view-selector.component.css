@@ -1,0 +1,24 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+  .error-input{
+      color:red;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .marginTop{
+    margin-top: 45px;
+}
+mat-card {
+  max-width: 400px;
+  margin: 3em 16em 0em 25em;
+  background-color: rgb(241, 237, 232);
+  
+}
+mat-card-content {
+  font-size: 18px;
+}

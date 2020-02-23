@@ -1,0 +1,65 @@
+<div class="keep-c-note-edit-container">
+  <label class="error-message">{{ errMessage }}</label>
+  <div mat-dialog-title >{{note.noteTitle}}</div>
+ <div mat-dialog-content>
+  <mat-form-field>
+    <input mat-card-title
+      [(ngModel)]="note.noteTitle"
+      name="editTitle"
+      matInput
+      placeholder="Title"
+      type="text" required
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <textarea
+      [(ngModel)]="note.noteContent"
+      name="editText"
+      matInput
+      placeholder="Text" required
+    ></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select
+      name="editStatus"
+      placeholder="Select state"
+      [(ngModel)]="note.noteStatus" required
+    >
+      <mat-option *ngFor="let state of states" [value]="state">
+        {{ state }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+<mat-form-field>
+    <mat-select
+      name="category"
+      placeholder="Select Category"
+      [(ngModel)]="selectedCategory" 
+    >
+      <mat-option *ngFor="let category of categories" [value]="category">
+        {{ category.categoryName }}
+      </mat-option>
+    </mat-select>
+</mat-form-field>
+
+
+<mat-form-field>
+    <mat-select
+      name="reminder" [compareWith]="compareReminder"
+      placeholder="Select Reminder"
+      [(ngModel)]="note.reminder" multiple
+    >
+      <mat-option *ngFor="let reminder of reminders" [value]="reminder">
+        {{ reminder.reminderName }}
+      </mat-option>
+    </mat-select>
+</mat-form-field>
+
+  </div>
+
+  <div  mat-dialog-actions class="keep-c-done-wrapper">
+    <button  (click)="onSave()">Save</button>
+  </div>
+
+</div>

@@ -1,0 +1,6 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.note-form{
+	display: flex;
+	flex-direction: column;
+}
+
