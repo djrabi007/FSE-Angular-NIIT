@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //@ComponentScan(basePackages = { "com.stackroute.keepnote" })
 //@EnableDiscoveryClient
 //@EnableFeignClients
+
 public class NoteServiceApplication {
 
 	
