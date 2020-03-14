@@ -14,8 +14,8 @@ import { Component, OnInit,Input} from '@angular/core';
 export class ReminderService implements OnInit{
   //url = "http://localhost:9500/api/v1/reminder"
  // url = "/reminderservice/api/v1/reminder";
-  //url = "http://localhost:9500/reminderservice/api/v1/reminder"
-  url = "http://localhost:9300/reminderservice/api/v1/reminder"
+  url = "http://localhost:9500/reminderservice/api/v1/reminder"
+ // url = "http://localhost:9300/reminderservice/api/v1/reminder"
   
   reminders: Array<Reminder>;
   reminderSubject: BehaviorSubject<Array<Reminder>>;

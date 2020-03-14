@@ -14,8 +14,8 @@ import { Component, OnInit,Input} from '@angular/core';
 export class CategoryService implements OnInit{
   //url = "http://localhost:9400/api/v1/category"
   // url = "/categoryservice/api/v1/category";
-   //url = "http://localhost:9400/categoryservice/api/v1/category"
-   url = "http://localhost:9300/categoryservice/api/v1/category"
+   url = "http://localhost:9400/categoryservice/api/v1/category"
+   //url = "http://localhost:9300/categoryservice/api/v1/category"
   categories: Array<Category>;
   categorySubject: BehaviorSubject<Array<Category>>;
   

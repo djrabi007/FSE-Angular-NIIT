@@ -14,6 +14,7 @@ export class NotesService implements OnInit{
   //url = "http://localhost:9300/api/v1/notes";
  //  url = "/noteservice/api/v1/note";
    url = "http://localhost:9300"+"/noteservice/api/v1/note";
+   
  
   notes: Array<Note>;
   notesSubject: BehaviorSubject<Array<Note>>;
